@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0e15">
+  <title>Happy 53rd Birthday Mother</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Birthday Cake</h1>
+    <button class="sound" id="soundBtn" type="button" aria-label="Turn sound off" aria-pressed="true">🔊</button>
+  </header>
+
+  <main class="stage" id="stage">
+    <p class="hint" id="hint">Touch to blow</p>
+    <div class="floaters" id="floaters" aria-hidden="true"></div>
+
+    <div class="cake-wrap" id="cakeWrap" role="button" tabindex="0" aria-label="Touch the cake to blow out the candles">
+      <div class="glow" id="glow"></div>
+      <div class="cake" id="cake">
+        <div class="candles" id="candles"></div>
+        <div class="layer l1"></div>
+        <div class="layer l2"></div>
+        <div class="layer l3"></div>
+        <svg class="icing" viewBox="0 0 260 74" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 14 C0 4 10 2 20 5 C32 9 38 -2 56 3 C72 8 78 12 92 10 C104 8 110 0 128 3 C146 6 150 12 166 10 C182 8 188 -1 206 3 C222 7 232 4 246 4 C256 4 260 8 260 16 L260 24 C260 30 254 30 252 24 L250 22 C246 22 246 28 246 32 C246 38 238 38 238 32 L238 26 C236 20 230 22 230 26 L230 36 C230 46 218 46 218 36 L218 24 C216 18 206 18 204 24 L204 28 C202 34 194 34 192 28 L190 22 C186 18 176 18 174 24 L172 28 C170 34 162 34 160 28 L158 24 C154 20 146 20 142 24 L140 30 C138 36 130 36 128 30 L126 26 C122 22 114 22 112 28 L112 52 C112 62 100 62 100 52 L100 30 C98 22 88 22 86 28 L84 34 C82 40 74 40 72 34 L70 28 C66 22 58 22 56 28 L54 34 C52 40 44 40 42 34 L40 30 C36 24 28 26 26 32 L26 48 C26 58 14 58 14 48 L14 30 C12 24 6 24 4 28 L0 30 Z"/>
+        </svg>
+        <div class="plate"></div>
+      </div>
+    </div>
+
+    <button class="photo" id="photoBtn" type="button" title="Tap to add a photo" aria-label="Add a photo of Mother">
+      <span class="photo-ph">📷</span>
+    </button>
+    <input type="file" id="photoInput" accept="image/*" hidden>
+
+    <h2 class="greeting" id="greeting">Happy 53rd Birthday Mother</h2>
+    <p class="wishline" id="wishLine" aria-live="polite"></p>
+
+    <div class="controls">
+      <button class="btn" id="blowBtn" type="button">Blow out candles</button>
+      <button class="btn btn-alt" id="micBtn" type="button">🎤 Blow with mic</button>
+      <button class="btn btn-alt" id="cardBtn" type="button" hidden>💌 Open card</button>
+      <button class="btn btn-alt" id="againBtn" type="button" hidden>Celebrate again</button>
+    </div>
+  </main>
+
+  <div class="card-backdrop" id="cardBackdrop" hidden>
+    <section class="card" role="dialog" aria-modal="true" aria-labelledby="cardTitle">
+      <p class="card-kicker">A little note for you</p>
+      <h3 id="cardTitle">Dear Mother,</h3>
+      <p class="card-msg" id="cardMsg"></p>
+      <p class="card-from">With all my love,<br><span id="cardFrom"></span></p>
+      <div class="card-actions">
+        <button class="btn btn-small btn-alt-dark" id="cardDone" type="button">Close</button>
+      </div>
+    </section>
+  </div>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
